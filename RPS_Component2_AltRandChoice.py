@@ -10,7 +10,7 @@ import random
 # Main code here
 
 # Computer randomly chooses an attack
-attack_choices = ["rock","paper","scissors"]
+attack_choices = ["rock","paper","scissors","lizard","spock"]
 for item in range (0,10):
     comp_chosen_attack = random.choice(attack_choices)
     print(comp_chosen_attack)

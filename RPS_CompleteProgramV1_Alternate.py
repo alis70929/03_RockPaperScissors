@@ -1,10 +1,9 @@
-#RPS Component 1 Normal
 
-# To do
-# - Get choice of attack from user, make sure its valid in this scenario(Rock Paper or Scissors)
-# - Get how many rounds user wishes to play, Make sure its an int over 0 and odd
+# Imports here
+import random
 
-#functions go here
+
+# functions go here
 def choose_attack(question,error):
     valid = False
 
@@ -20,8 +19,15 @@ def choose_attack(question,error):
         elif response.lower() == "paper" or response.lower() == "p":
             choosing_attack = "paper"
             return choosing_attack
+        elif response.lower() == "lizard" or response.lower() == "l":
+            choosing_attack = "lizard"
+            return choosing_attack
+        elif response.lower() == "spock" or response.lower() == "sp":
+            choosing_attack = "spock"
+            return choosing_attack
         else:
             print(error)
+
 
 def intcheck_odd(question,low ):
     valid = False
@@ -48,10 +54,14 @@ def intcheck_odd(question,low ):
 
 
 # Main Code goes here
-keepgoing = ""
-while keepgoing == "":
-    chosen_attack = choose_attack("Choose Rock(R), Paper(P) or Scissors(S)", "Please check your spelling and try again")
-    rounds = intcheck_odd("Best out of ?:",1)
-    print(chosen_attack)
 
+# User chooses best out of ?
+rounds = intcheck_odd("Best out of ?:",1)
+print("So best out of {} it is".format(rounds))
+# User chooses either rock paper or scissors
+chosen_attack = choose_attack("Choose Rock(R), Paper(P) or Scissors(S)", "Please check your spelling and try again")
 
+# Computer randomly chooses an attack
+attack_choices = ["rock","paper","scissors"]
+comp_chosen_attack = random.choice(attack_choices)
+print(comp_chosen_attack)
