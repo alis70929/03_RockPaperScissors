@@ -23,33 +23,21 @@ def choose_attack(question,error):
         else:
             print(error)
 
-def intcheck_odd(question,low = None,high = None):
+def intcheck_odd(question,low ):
     valid = False
-    # Error messages
-    if low is not None and high is not None: # Error message if variables are given
-        error = "Please enter a whole number between {} and {} (Inclusive) ".format(low,high)
-    elif low is not None and high is None: # Error message if only low variable is given
-        error = "Please enter a whole number equal to or above {} ".format(low)
-    elif low is not None and high is None: # Error message if only high variable is given
-        error = "Please enter a whole number equal to or below {} ".format(high)
-    else: # Error message if no variables are given
-        error = "please enter a whole number"
 
-
+    # Error message
+    error = "Please enter a whole number equal to or above {} ".format(low)
     while not valid:
         try:
             # Gets user input
             response = int(input(question.format(low, high)))
             # Checks number is not too low
-            if low is not None and response < low:
+            if response < low:
                 print(error) # If its too low  display error
                 continue
-            # Checks number is not too high
-            if high is not None and response > high:
-                print(error)  # If it is too high print error
-                continue
             if response % 2 == 0:  # Checks if number is odd
-                print("Please enter an odd number")
+                print("Please enter an odd number") # If odd displays an unique error
                 continue
 
             return response
