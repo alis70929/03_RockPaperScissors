@@ -20,6 +20,12 @@ def choose_attack(question,error):
         elif response.lower() == "paper" or response.lower() == "p":
             choosing_attack = "paper"
             return choosing_attack
+        elif response.lower() == "lizard" or response.lower() == "l":
+            choosing_attack = "lizard"
+            return choosing_attack
+        elif response.lower() == "spock" or response.lower() == "sp":
+            choosing_attack = "spock"
+            return choosing_attack
         else:
             print(error)
 
@@ -39,7 +45,7 @@ def intcheck_odd(question,low ):
             if response % 2 == 0:  # Checks if number is odd
                 print("Please enter an odd number") # If odd displays an unique error
                 continue
-
+            # Returns response to main code
             return response
         # If input is not a number or is a decimal then display error
         except ValueError:
@@ -50,8 +56,8 @@ def intcheck_odd(question,low ):
 # Main Code goes here
 keepgoing = ""
 while keepgoing == "":
-    chosen_attack = choose_attack("Choose Rock(R), Paper(P) or Scissors(S)", "Please check your spelling and try again")
+    chosen_attack = choose_attack("Choose Rock(R), Paper(P), Scissors(S), Lizard(L) or Spock(Sp)", "Please check your spelling and try again")
     rounds = intcheck_odd("Best out of ?:",1)
-    print(rounds)
+    print(chosen_attack)
 
 
