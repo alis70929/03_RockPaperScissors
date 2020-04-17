@@ -31,7 +31,7 @@ def intcheck_odd(question,low ):
     while not valid:
         try:
             # Gets user input
-            response = int(input(question.format(low, high)))
+            response = int(input(question))
             # Checks number is not too low
             if response < low:
                 print(error) # If its too low  display error
