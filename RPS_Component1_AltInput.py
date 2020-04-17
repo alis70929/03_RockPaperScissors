@@ -1,7 +1,7 @@
-#RPS Component 1 Normal
+#RPS Component 1 Alternate
 
 # To do
-# - Get choice of attack from user, make sure its valid in this scenario
+# - Get choice of attack from user, make sure its valid in this scenario(Rock Paper Scissors Lizard or Spock)
 # - Get how many rounds user wishes to play, Make sure its an int over 0 and odd
 
 #functions go here
@@ -57,7 +57,7 @@ def intcheck_odd(question,low ):
 keepgoing = ""
 while keepgoing == "":
     chosen_attack = choose_attack("Choose Rock(R), Paper(P), Scissors(S), Lizard(L) or Spock(Sp)", "Please check your spelling and try again")
-    rounds = intcheck_odd("Best out of ?:",1)
+    #rounds = intcheck_odd("Best out of ?:",1)
     print(chosen_attack)
 
 

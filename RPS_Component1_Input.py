@@ -1,7 +1,7 @@
 #RPS Component 1 Normal
 
 # To do
-# - Get choice of attack from user, make sure its valid in this scenario
+# - Get choice of attack from user, make sure its valid in this scenario(Rock Paper or Scissors)
 # - Get how many rounds user wishes to play, Make sure its an int over 0 and odd
 
 #functions go here
