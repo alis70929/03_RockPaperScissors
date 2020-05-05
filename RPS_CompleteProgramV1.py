@@ -6,10 +6,13 @@ import random
 
 
 # Functions go here
-def int_checker(question):
+def int_checker(question,low):
     while True:
         try:
             response = int(input(question))
+            if response <= low:
+                print("Please enter a whole number above 0")
+                continue
             return response
         except ValueError:
             print("Please enter a whole number above 0")
@@ -37,7 +40,7 @@ while not game_mode_valid:
 rounds_valid = False
 while not rounds_valid:
     # ask how many rounds they would like to play and check if it an int
-    rounds = int_checker("Best out of ?:")
+    rounds = int_checker("Best out of ?:", 1)
     # check if rounds is an odd number to avoid overall draws
     if rounds % 2 == 0:
         # error message if rounds is even

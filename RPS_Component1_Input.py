@@ -6,10 +6,13 @@
 # - Ask user best out of ?
 
 # Functions go here
-def int_checker(question):
+def int_checker(question,low):
     while True:
         try:
             response = int(input(question))
+            if response <= low:
+                print("Please enter a whole number above 0")
+                continue
             return response
         except ValueError:
             print("Please enter a whole number above 0")
@@ -58,7 +61,7 @@ while not attack_choice_valid:
 
 rounds_valid = False
 while not rounds_valid:
-    rounds = int_checker("Best out of ?:")
+    rounds = int_checker("Best out of ?:", 1)
     if rounds % 2 == 0:
         print("Please enter an odd number above 0")
         continue
