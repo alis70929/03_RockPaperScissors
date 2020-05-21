@@ -121,30 +121,36 @@ while keepgoin == "":
         # Display users choice vs computers choice
         print(chosen_attack_icon + " vs " + comp_attack_icon)
 
+        # Depending on what the game out come is say whether the user wins or loses, add the result o win loss counter
         if game_outcome == -1 or game_outcome == 4 or game_outcome == -3 or game_outcome == 2:
             print("Player Wins this round")
             winlosscounter.append("Win")
         elif game_outcome == 1 or game_outcome == -4 or game_outcome == 3 or game_outcome == -2:
-            print("CPU Wins this round")
+            print("Player loss")
             winlosscounter.append("Loss")
         else:
             print("Oof, No one won this round")
             winlosscounter.append("Draw")
 
+        # Display current scores
         print("Player {} || Cpu {}".format(winlosscounter.count("Win"),winlosscounter.count("Loss")))
 
+    # This section is for endgame summary
     list_count_for_summary = 0
-    print("Round # || Win/Loss")
+    print("Round # || Win/Loss") # Top of teh table of results
+    # Creates a table that show which rounds user won, drew or lost
     for item in winlosscounter:
         print("Round {} || {}    ".format(list_count_for_summary + 1, winlosscounter[list_count_for_summary]))
         list_count_for_summary += 1
+    # Did the user win more rounds or the cpu
     if winlosscounter.count("Win") > winlosscounter.count("Loss"):
         winlossoverall = "Win"
     else:
         winlossoverall = "Loss"
 
     print("")
-    print("Overall  || {}".format(winlossoverall))
+    print("Overall  || {}".format(winlossoverall)) # Prints overall result
     print("")
+    # asks user if they wish to play again
     keepgoin = input("Press <enter> to play again or press any key then <enter> to quit")
 
