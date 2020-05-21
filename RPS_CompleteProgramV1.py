@@ -17,6 +17,13 @@ def int_checker(question,low):
         except ValueError:
             print("Please enter a whole number above 0")
 
+def rps_statement(statement, char):
+    print()
+    print(char * len(statement))
+    print(statement)
+    print(char * len(statement))
+    print()
+
 
 # Main code
 
@@ -119,21 +126,21 @@ while keepgoin == "":
             game_outcome -= 5
 
         # Display users choice vs computers choice
-        print(chosen_attack_icon + " vs " + comp_attack_icon)
+        rps_statement("--- " + chosen_attack_icon + " vs " + comp_attack_icon + " ---", "-")
 
         # Depending on what the game out come is say whether the user wins or loses, add the result o win loss counter
         if game_outcome == -1 or game_outcome == 4 or game_outcome == -3 or game_outcome == 2:
-            print("Player Wins this round")
+            rps_statement("!!! You won this round, Well Done !!!", "!")
             winlosscounter.append("Win")
         elif game_outcome == 1 or game_outcome == -4 or game_outcome == 3 or game_outcome == -2:
-            print("Player loss")
+            rps_statement("xxx You lost this round, better luck next round xxx", "x")
             winlosscounter.append("Loss")
         else:
-            print("Oof, No one won this round")
+            rps_statement("--- No one won this round, It was a draw ---", "-")
             winlosscounter.append("Draw")
 
         # Display current scores
-        print("Player {} || Cpu {}".format(winlosscounter.count("Win"),winlosscounter.count("Loss")))
+        rps_statement("--- Player {} || Cpu {} ---".format(winlosscounter.count("Win"),winlosscounter.count("Loss")),"---")
 
     # This section is for endgame summary
     list_count_for_summary = 0
